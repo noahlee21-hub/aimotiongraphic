@@ -1,0 +1,9 @@
+{
+  "name": "n-reference-remake",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check app.js && node --check renderer.js && node --check motion.js && node --check layers.js",
+    "start": "python3 -m http.server 8000 --bind 127.0.0.1"
+  }
+}

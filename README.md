@@ -1,39 +1,39 @@
-# N — Motion Study
+# N — reference remake
 
-A 20.455-second looping, square motion graphic featuring only the uppercase **N**. No personal name or separate brand wordmark.
+첨부 원작을 기준으로 숫자/엔딩 문구를 대문자 **N**으로 바꾼 HTML·JavaScript·WebGL 리메이크입니다. 이름이나 추가 문구는 영상에 넣지 않았습니다.
 
-## Run
+## 실행
 
 ```sh
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-Open http://127.0.0.1:8000. Serve over HTTP for WebGL texture loading.
+- 작품: http://127.0.0.1:8000/
+- 동일 시간 비교: http://127.0.0.1:8000/?compare=1 (왼쪽 N, 오른쪽 원본)
+- 비교 모드의 숫자 입력은 0부터 시작하는 프레임 번호입니다. 이전/다음 버튼은 1프레임씩 이동합니다.
+- 재생/일시정지, 다시 재생, 탐색, 원본 소리 켜기, 전체화면을 지원합니다. 기본은 음소거입니다.
+- 별도 설치/번들러/외부 CDN이 없습니다. WebGL과 동영상 재생을 지원하는 브라우저가 필요합니다.
 
-## Editorial structure
+## 편집과 자산
 
-- 0–5.60: close crops of illustrated plates, accelerating cuts and slow camera movement.
-- 5.60–13.90: rapid N match cuts through cartography, floral wallpaper, manuscript, coins, stamps, blueprint, geometry, natural specimens and procedural scientific patterns. Different colors, densities and treatments; no repeated scatter-and-reassemble transition.
-- 13.90–14.7333: botanical N holds, with falling petals.
-- 14.7333–16.1667: the butterflies forming N disperse toward the viewer. Oversized wings and blur cover the cut.
-- 16.1667–18.60: single N on coral grid paper.
-- 18.60–20.455: single N on ivory grid paper, then a foreground butterfly into the loop.
+원본은 720×720, 24fps, 20.455초입니다. `shots.json`의 64개 구간을 기준으로 하드 컷을 구성합니다. 영상 자체의 프레임 콜백을 재생 시계로 사용해 비교 영상과 별도의 타이머가 누적해서 어긋나지 않도록 했습니다.
 
-Controls: play/pause, replay, scrub, fullscreen; Space toggles playback and arrow keys step 0.25 seconds unless the slider has focus. Reduced-motion preference opens on a paused botanical frame. No soundtrack.
+원본의 글자 없는 도판 인트로 0–133프레임과 마지막 나비 클로즈업 488프레임 이후는 제공된 원본 영상에서 직접 재생합니다. 이를 포함한 `assets/reference.mp4`는 실행에 필요합니다. 원본의 오디오도 선택적으로 재생됩니다.
 
-## Rendering
+`assets/plates/`에는 원본 각 장면을 참조해 built-in ImageGen으로 재구성한 51개의 N 이미지가 있습니다. 최종 사용 파일은 JPG이며 각 `*.prompt.txt`에 실제 생성 프롬프트를 보관했습니다. 같은 이미지의 PNG는 로컬 제작 원본으로 Git에서 제외합니다. 지도, 동전, 악보, 양각/음각 우표, X-ray, 현미경, 배양 접시 등을 다른 소재로 대체하지 않았습니다.
 
-Plain HTML/CSS/JavaScript, no dependencies or remote font requests. Canvas 2D composes original atlas artwork and procedural patterns. WebGL renders the final animated frames with a film grain and vignette. Depth blur is applied only to nearby butterfly layers. Camera crops, local sprite transforms and flight depth are animated individually. Generated atlas lettering is baked into the artwork; the final N is rendered with the browser's Georgia serif font.
+꽃잎은 꽃 N 이미지에서 윤곽/색 마스크로 분리합니다. 나비는 원본 도판에서 개체별로 마스킹한 뒤 N에 배치하며, 몸통·왼쪽 날개·오른쪽 날개를 별도 WebGL 평면으로 투영합니다. 가까운 나비에만 흐림을 적용하고 같은 무리가 다음 배경까지 이어집니다. 엔딩은 원본 격자 종이에서 기존 문구를 제거하고 N만 그립니다.
 
-## Assets and analysis
+## 분석과 검증
 
-- `assets/specimens.png`: original 4×4 specimen atlas, created with built-in ImageGen; prompt in `assets/prompt.txt`.
-- `assets/n-studies.png`: nine original N treatments created with built-in ImageGen; exact prompt in `assets/n-studies-prompt.txt`.
-- `reference-analysis/analysis.md`: detailed source observations and the corrected editing approach.
-- `reference-analysis/sheet-*.jpg`: local reference contact sheets sampled every 0.25 seconds with zero time tolerance. They are analysis material only and are not loaded into the animation.
+- `reference-analysis/shot-by-shot.md`: 컷 경계, 소재, 배경색, 구도, 카메라/개체 움직임, 관찰과 추정, 남는 차이.
+- `tools/extract-reference.swift`: 원본을 정확한 프레임 시각으로 추출하는 macOS AVFoundation 도구.
+- `tools/contact-sheets.py`, `tools/boundary-sheets.py`: 수동 컷 검토용 도판.
+- `reference-analysis/validation.md`: 실제 브라우저 대조 및 정상 속도 재생 결과.
+- `npm run check`: JavaScript 구문 검사.
 
-Validation: JavaScript syntax check; browser rendering and no reported WebGL/JavaScript warnings or errors; inspected cartographic N, botanical hold, foreground butterfly wipe and single-letter ending.
+기존 `reference-analysis/analysis.md`의 30Hz 분석과 이전 atlas 자산은 이전 버전 기록이며 현재 구현에는 사용하지 않습니다. 컷 시간은 새 24fps 분석을 기준으로 합니다.
 
-## Reference-motion refinement
+## 구현상의 차이
 
-Cut-change measurements at 30 Hz refine the source cadence, including approximately 0.10–0.17-second cuts in the dense montage. Detection is based on image differences, so these are motion-matching estimates rather than an original editing timeline. Plate angles stay fixed; the repeating zoom easing and random inter-cut jitter are removed. Butterflies use independently hinged half-wings, staggered takeoff, separate curved paths, a fixed body strip and per-object depth blur. The same flock persists over the coral background. Whole-frame radial blur and the additional unrelated crossing swarm are removed. This is a 2.5D remake with original N artwork, not a reconstruction of the source's unknown 3D rig.
+세부 도판은 생성 이미지이므로 원본 삽화의 모든 픽셀이 같지는 않습니다. N의 구조에 맞춘 개체 위치·밀도 변경이 있으며, 초반 N 도판의 미세 축소와 꽃잎 이동·개별 나비의 비행 경로·날개 각도·깊이는 관찰 기반 근사입니다. 나비는 완전한 3D 모델이 아닌 분리 평면이며 가까이서 윤곽/마스크 차이가 보일 수 있습니다. 종이 보완 부분과 Georgia 엔딩 글꼴도 원본 제작 자산과는 차이가 있습니다.

@@ -1,0 +1,266 @@
+[
+  {
+    "frame": "21",
+    "paused": false,
+    "shot": "opening",
+    "t": 0.889711
+  },
+  {
+    "frame": "34",
+    "paused": false,
+    "shot": "opening",
+    "t": 1.413483
+  },
+  {
+    "frame": "47",
+    "paused": false,
+    "shot": "map-intro",
+    "t": 1.938382
+  },
+  {
+    "frame": "59",
+    "paused": false,
+    "shot": "map-intro",
+    "t": 2.460645
+  },
+  {
+    "frame": "72",
+    "paused": false,
+    "shot": "ceramics-intro",
+    "t": 2.991324
+  },
+  {
+    "frame": "84",
+    "paused": false,
+    "shot": "ceramics-intro",
+    "t": 3.510976
+  },
+  {
+    "frame": "97",
+    "paused": false,
+    "shot": "fruit-intro",
+    "t": 4.040705
+  },
+  {
+    "frame": "109",
+    "paused": false,
+    "shot": "garden-intro",
+    "t": 4.561365
+  },
+  {
+    "frame": "122",
+    "paused": false,
+    "shot": "architecture-intro",
+    "t": 5.086246
+  },
+  {
+    "frame": "135",
+    "paused": false,
+    "shot": "floral-wallpaper",
+    "t": 5.610653
+  },
+  {
+    "frame": "147",
+    "paused": false,
+    "shot": "polyhedra",
+    "t": 6.139073
+  },
+  {
+    "frame": "160",
+    "paused": false,
+    "shot": "score",
+    "t": 6.662855
+  },
+  {
+    "frame": "173",
+    "paused": false,
+    "shot": "illuminated",
+    "t": 7.185441
+  },
+  {
+    "frame": "185",
+    "paused": false,
+    "shot": "fish-engraving",
+    "t": 7.713905
+  },
+  {
+    "frame": "198",
+    "paused": false,
+    "shot": "coins",
+    "t": 8.231608
+  },
+  {
+    "frame": "210",
+    "paused": false,
+    "shot": "cards",
+    "t": 8.763353
+  },
+  {
+    "frame": "225",
+    "paused": false,
+    "shot": "bars",
+    "t": 9.345497
+  },
+  {
+    "frame": "238",
+    "paused": false,
+    "shot": "ink-map",
+    "t": 9.871415
+  },
+  {
+    "frame": "250",
+    "paused": false,
+    "shot": "paper",
+    "t": 10.394606
+  },
+  {
+    "frame": "263",
+    "paused": false,
+    "shot": "micro-gold",
+    "t": 10.917424
+  },
+  {
+    "frame": "276",
+    "paused": false,
+    "shot": "circuit",
+    "t": 11.444592
+  },
+  {
+    "frame": "288",
+    "paused": false,
+    "shot": "cells",
+    "t": 11.971239
+  },
+  {
+    "frame": "301",
+    "paused": false,
+    "shot": "cards",
+    "t": 12.493551
+  },
+  {
+    "frame": "313",
+    "paused": false,
+    "shot": "autumn",
+    "t": 13.021088
+  },
+  {
+    "frame": "326",
+    "paused": false,
+    "shot": "petri",
+    "t": 13.532492
+  },
+  {
+    "frame": "338",
+    "paused": false,
+    "shot": "flowers",
+    "t": 14.056066
+  },
+  {
+    "frame": "351",
+    "paused": false,
+    "shot": "flowers",
+    "t": 14.579237
+  },
+  {
+    "frame": "363",
+    "paused": false,
+    "shot": "butterflies",
+    "t": 15.096741
+  },
+  {
+    "frame": "376",
+    "paused": false,
+    "shot": "butterflies",
+    "t": 15.680323
+  },
+  {
+    "frame": "389",
+    "paused": false,
+    "shot": "coral",
+    "t": 16.203238
+  },
+  {
+    "frame": "403",
+    "paused": false,
+    "shot": "coral",
+    "t": 16.790623
+  },
+  {
+    "frame": "417",
+    "paused": false,
+    "shot": "coral",
+    "t": 17.425092
+  },
+  {
+    "frame": "432",
+    "paused": false,
+    "shot": "coral",
+    "t": 17.969309
+  },
+  {
+    "frame": "444",
+    "paused": false,
+    "shot": "coral",
+    "t": 18.486452
+  },
+  {
+    "frame": "457",
+    "paused": false,
+    "shot": "ivory",
+    "t": 19.000696
+  },
+  {
+    "frame": "469",
+    "paused": false,
+    "shot": "ivory",
+    "t": 19.52541
+  },
+  {
+    "frame": "482",
+    "paused": false,
+    "shot": "ivory",
+    "t": 20.054197
+  },
+  {
+    "frame": "3",
+    "paused": false,
+    "shot": "opening",
+    "t": 0.125808
+  },
+  {
+    "frame": "15",
+    "paused": false,
+    "shot": "opening",
+    "t": 0.633115
+  },
+  {
+    "frame": "28",
+    "paused": false,
+    "shot": "opening",
+    "t": 1.161632
+  },
+  {
+    "frame": "41",
+    "paused": false,
+    "shot": "map-intro",
+    "t": 1.713895
+  },
+  {
+    "frame": "53",
+    "paused": false,
+    "shot": "map-intro",
+    "t": 2.229395
+  },
+  {
+    "frame": "65",
+    "paused": false,
+    "shot": "ceramics-intro",
+    "t": 2.74074
+  },
+  {
+    "frame": "78",
+    "paused": false,
+    "shot": "ceramics-intro",
+    "t": 3.254445
+  }
+]

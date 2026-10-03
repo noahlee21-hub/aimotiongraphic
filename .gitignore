@@ -1,2 +1,7 @@
 .DS_Store
 reference-analysis/sheet-*.jpg
+reference-analysis/frames/
+reference-analysis/review-*.jpg
+reference-analysis/boundaries-*.jpg
+reference-analysis/generated-*.jpg
+assets/plates/*.png
